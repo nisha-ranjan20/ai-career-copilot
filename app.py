@@ -93,12 +93,11 @@ Use proper markdown.
         response = model.generate_content(prompt)
         questions = response.text
 
-    except:
-        questions = """
-# Interview Questions
+    except Exception as e:
+       questions = f"""
+Gemini Error:
 
-Gemini API unavailable.
-Please try again later.
+{str(e)}
 """
 
     import markdown
@@ -203,13 +202,12 @@ Resume:
         response = model.generate_content(prompt)
         ai_result = response.text
 
-    except Exception:
-        ai_result = """
-    Gemini AI quota exceeded.
+    except Exception as e:
+        ai_result = f"""
+Gemini Error:
 
-    Please try again later
-    or use a new API key.
-    """
+{str(e)}
+"""
 
     
 
