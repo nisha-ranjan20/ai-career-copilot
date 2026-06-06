@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Interview Questions</title>
+
+<style>
+
+body{
+    background:#f4f6fb;
+    font-family:Arial;
+}
+
+.card{
+    max-width:1000px;
+    margin:40px auto;
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 0 15px lightgray;
+}
+
+.btn{
+    background:#08152d;
+    color:white;
+    padding:12px 20px;
+    border-radius:10px;
+    text-decoration:none;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<h1>🎤 Interview Questions</h1>
+
+<div>
+{{ questions|safe }}
+</div>
+
+<br>
+
+<a href="/dashboard" class="btn">
+← Back Dashboard
+</a>
+
+</div>
+
+</body>
+</html>

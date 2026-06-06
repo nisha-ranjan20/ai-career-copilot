@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>My Reports</title>
+
+```
+<style>
+    body{
+        font-family:Arial;
+        background:#f4f6fb;
+    }
+
+    .container{
+        max-width:1000px;
+        margin:40px auto;
+        background:white;
+        padding:30px;
+        border-radius:15px;
+        box-shadow:0 0 15px rgba(0,0,0,.08);
+    }
+
+    table{
+        width:100%;
+        border-collapse:collapse;
+    }
+
+    th{
+        background:#08152d;
+        color:white;
+        padding:12px;
+    }
+
+    td{
+        padding:12px;
+        border-bottom:1px solid #eee;
+        text-align:center;
+    }
+
+    .btn{
+        background:#08152d;
+        color:white;
+        padding:10px 18px;
+        border-radius:8px;
+        text-decoration:none;
+    }
+</style>
+```
+
+</head>
+
+<body>
+
+<div class="container">
+
+```
+<h1>📊 My Reports</h1>
+
+<br>
+
+<table>
+
+    <tr>
+        <th>Score</th>
+        <th>Career</th>
+    </tr>
+
+    {% for report in reports %}
+
+    <tr>
+        <td>{{ report.score }}</td>
+        <td>{{ report.career }}</td>
+    </tr>
+
+    {% endfor %}
+
+</table>
+
+<br>
+
+<a href="/dashboard" class="btn">
+    ← Back Dashboard
+</a>
+```
+
+</div>
+
+</body>
+</html>

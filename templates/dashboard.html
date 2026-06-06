@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>AI Career Copilot Dashboard</title>
+
+```
+<style>
+
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        font-family:Arial,sans-serif;
+    }
+
+    body{
+        background:#f4f6fb;
+    }
+
+    .navbar{
+        background:#08152d;
+        color:white;
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        padding:18px 40px;
+    }
+
+    .nav-right{
+        display:flex;
+        align-items:center;
+        gap:20px;
+    }
+
+    .navbar a{
+        color:white;
+        text-decoration:none;
+        font-weight:bold;
+    }
+
+    .navbar a:hover{
+        color:#4da3ff;
+    }
+
+    .avatar-circle{
+        width:45px;
+        height:45px;
+        border-radius:50%;
+        background:white;
+        color:#08152d;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        font-weight:bold;
+    }
+
+    .container{
+        max-width:900px;
+        margin:30px auto;
+        padding:20px;
+    }
+
+    .profile-section{
+        text-align:center;
+        margin-bottom:25px;
+    }
+
+    .profile-avatar{
+        width:100px;
+        height:100px;
+        border-radius:50%;
+        border:4px solid #08152d;
+        box-shadow:0 0 15px rgba(0,0,0,.2);
+    }
+
+    .welcome-card,
+    .upload-card,
+    .reports-card,
+    .stat-card{
+        background:white;
+        border-radius:15px;
+        padding:20px;
+        box-shadow:0 4px 15px rgba(0,0,0,.08);
+    }
+
+    .welcome-card{
+        margin-bottom:20px;
+    }
+
+    .stats{
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        gap:15px;
+        margin-bottom:20px;
+    }
+
+    .stat-card{
+        text-align:center;
+    }
+
+    .stat-card h2{
+        color:#08152d;
+        font-size:35px;
+    }
+
+    .upload-card{
+        margin-bottom:20px;
+    }
+
+    .upload-card h2,
+    .reports-card h2{
+        color:#08152d;
+        margin-bottom:15px;
+    }
+
+    textarea{
+        width:100%;
+        height:90px;
+        padding:12px;
+        border:1px solid #ddd;
+        border-radius:10px;
+        margin-bottom:15px;
+        resize:none;
+    }
+
+    .chat-box{
+        height:70px;
+    }
+
+    input[type=file]{
+        margin-bottom:15px;
+    }
+
+    .goal{
+        width:100%;
+        padding:12px;
+        border:1px solid #ddd;
+        border-radius:10px;
+        margin-bottom:15px;
+    }
+
+    button{
+        background:#08152d;
+        color:white;
+        border:none;
+        padding:12px 22px;
+        border-radius:10px;
+        cursor:pointer;
+    }
+
+    button:hover{
+        background:#123765;
+    }
+
+    .interview-btn{
+        background:#28a745;
+        margin-top:10px;
+    }
+
+    .interview-btn:hover{
+        background:#218838;
+    }
+
+    table{
+        width:100%;
+        border-collapse:collapse;
+    }
+
+    th{
+        background:#08152d;
+        color:white;
+        padding:12px;
+    }
+
+    td{
+        padding:12px;
+        border-bottom:1px solid #eee;
+        text-align:center;
+    }
+
+    .chat-response{
+        margin-top:15px;
+        background:#f8f9fa;
+        padding:15px;
+        border-radius:10px;
+        line-height:1.7;
+    }
+
+</style>
+```
+
+</head>
+
+<body>
+
+<div class="navbar">
+
+```
+<h2>🚀 AI Career Copilot</h2>
+
+<div class="nav-right">
+
+    <div class="avatar-circle">
+        {{ email[0].upper() }}
+    </div>
+
+    <span>{{ email }}</span>
+     
+    <a href="/dashboard">Dashboard</a>
+    <a href="/reports">Reports</a>
+    <a href="/logout">Logout</a>
+
+</div>
+```
+
+</div>
+
+<div class="container">
+
+```
+<div class="profile-section">
+
+    <img
+    src="https://ui-avatars.com/api/?name={{ email }}&background=08152d&color=fff&size=200"
+    class="profile-avatar">
+
+    <h2 style="margin-top:10px;">{{ email }}</h2>
+
+</div>
+
+<div class="welcome-card">
+
+    <h1>Welcome Back 👋</h1>
+
+    <p>AI Powered Resume Analyzer & Career Assistant</p>
+
+</div>
+
+<div class="stats">
+
+    <div class="stat-card">
+        <h2>{{ count }}</h2>
+        <p>Total Reports</p>
+    </div>
+
+    <div class="stat-card">
+        <h2>AI</h2>
+        <p>Gemini Powered</p>
+    </div>
+
+</div>
+
+<div class="upload-card">
+
+    <h2>📄 Resume Analyzer</h2>
+
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+
+        <textarea
+            name="resume_text"
+            placeholder="Paste your resume here..."
+        ></textarea>
+
+        <input type="file" name="resume">
+
+        <input
+            class="goal"
+            type="text"
+            name="career_goal"
+            placeholder="Backend Developer, Data Analyst, Python Developer..."
+        >
+<button id="analyzeBtn" type="submit">
+    🚀 Analyze Resume
+</button>
+       
+
+    </form>
+
+    <a href="/interview">
+        <button type="button" class="interview-btn">
+            🎤 Generate Interview Questions
+        </button>
+    </a>
+
+</div>
+
+<div class="reports-card">
+
+    
+</div>
+
+<br>
+
+<div class="upload-card">
+
+    <h2>🤖 AI Career Chatbot</h2>
+
+    <form action="/chat" method="POST">
+
+        <textarea
+            class="chat-box"
+            name="message"
+            placeholder="Ask AI about career, resume, interview preparation..."
+        ></textarea>
+
+        <button type="submit">
+            Send Message
+        </button>
+
+    </form>
+
+    {% if chat_response %}
+
+    <div class="chat-response">
+        {{ chat_response }}
+    </div>
+
+    {% endif %}
+
+</div>
+```
+
+</div>
+<script>
+
+document.querySelector('form[action="/upload"]')
+.addEventListener('submit', function(){
+
+    const btn = document.getElementById('analyzeBtn');
+
+    btn.innerHTML = "⏳ Analyzing Resume...";
+    btn.disabled = true;
+
+});
+
+</script>
+</body>
+</html>

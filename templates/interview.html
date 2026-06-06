@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Interview Generator</title>
+
+    <style>
+        body{
+            font-family:Arial;
+            background:#f4f6fb;
+        }
+
+        .card{
+            width:700px;
+            margin:80px auto;
+            background:white;
+            padding:30px;
+            border-radius:15px;
+            box-shadow:0 0 15px lightgray;
+        }
+
+        input{
+            width:100%;
+            padding:12px;
+            margin-top:15px;
+            border:1px solid #ddd;
+            border-radius:10px;
+        }
+
+        button{
+            margin-top:15px;
+            padding:12px 25px;
+            background:#08152d;
+            color:white;
+            border:none;
+            border-radius:10px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="card">
+
+<h1>🎤 Interview Question Generator</h1>
+
+<form action="/generate-interview" method="POST">
+
+<input
+type="text"
+name="role"
+placeholder="Enter Role (Python Developer, Data Analyst etc)"
+required>
+
+<button type="submit">
+Generate Questions
+</button>
+
+</form>
+
+</div>
+
+</body>
+</html>

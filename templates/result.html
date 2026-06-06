@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Resume Analysis</title>
+
+    <style>
+
+        body{
+            font-family: Arial, sans-serif;
+            background:#f4f6f9;
+            padding:40px;
+        }
+        .download-btn{
+    background:#28a745;
+    color:white !important;
+    padding:12px 25px;
+    border-radius:10px;
+    text-decoration:none;
+    display:inline-block;
+    margin-right:10px;
+    font-weight:bold;
+}
+.btn,
+.download-btn{
+    padding:12px 25px;
+    border-radius:10px;
+    text-decoration:none;
+    display:inline-block;
+    font-weight:bold;
+}
+.download-btn:hover{
+    background:#218838;
+}
+        .container{
+            max-width:1000px;
+            margin:auto;
+        }
+
+        .score-card{
+            background:#e8f5e9;
+            padding:20px;
+            border-radius:12px;
+            border-left:5px solid green;
+            margin-bottom:20px;
+            box-shadow:0 0 10px lightgray;
+        }
+
+        .analysis{
+            background:white;
+            padding:30px;
+            border-radius:12px;
+            box-shadow:0 0 15px lightgray;
+            line-height:1.8;
+            font-size:16px;
+        }
+
+        .analysis h1,
+        .analysis h2,
+        .analysis h3{
+            color:#08152d;
+        }
+
+        .analysis ul{
+            padding-left:25px;
+        }
+.score-circle{
+    width:150px;
+    height:150px;
+    border-radius:50%;
+    background:conic-gradient(#22c55e 75%, #e5e7eb 0);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:32px;
+    font-weight:bold;
+    color:#08152d;
+    margin:auto;
+}
+        .btn{
+            display:inline-block;
+            margin-top:20px;
+            padding:12px 20px;
+            background:#08152d;
+            color:white;
+            text-decoration:none;
+            border-radius:8px;
+        }
+
+        .btn:hover{
+            background:#102b57;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<div class="container">
+
+    <div class="score-card">
+        <h2>📊 AI Resume Analysis Report</h2>
+        <p>Generated using Gemini AI</p>
+    </div>
+<div class="score-circle">
+    {{ score }}
+</div>
+    <div class="analysis">
+        {{ ai_result|safe }}
+    </div>
+
+<a href="/download-report" class="btn download-btn">
+    📥 Download PDF Report
+</a>
+
+    <a href="/dashboard" class="btn">
+        ← Back to Dashboard
+    </a>
+
+</div>
+
+</body>
+</html>
